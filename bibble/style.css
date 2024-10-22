@@ -1,75 +1,63 @@
-/* General Styling */
+/* General Styles */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #ffffff;
-    color: #333333;
     margin: 0;
     padding: 0;
+    background-color: white;
+    color: black;
+    overflow: hidden;
 }
 
-/* Header and Titles */
 h1, h2 {
+    color: #333;
     text-align: center;
-    font-weight: bold;
-    border-bottom: 2px solid #333;
-    padding-bottom: 10px;
-    margin-bottom: 30px;
 }
 
-/* Layout and Sections */
-header, footer {
-    padding: 20px;
-    text-align: center;
-    background-color: #f4f4f4;
-    border-bottom: 3px solid #ddd;
+/* Background Blurry Balls */
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
 }
 
-section {
-    margin: 40px auto;
-    max-width: 800px;
-    padding: 20px;
-    border: 2px solid #eee;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: #ffffff;
-    border-radius: 10px;
+.blurry-ball {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: rgba(0, 123, 255, 0.3);
+    border-radius: 50%;
+    filter: blur(60px);
+    animation: float 10s ease-in-out infinite;
 }
 
-section h2 {
-    font-size: 1.5rem;
-    color: #444;
+.blurry-ball:nth-child(2) {
+    background: rgba(255, 0, 123, 0.3);
+    width: 100px;
+    height: 100px;
+    top: 30%;
+    left: 50%;
+    animation-duration: 8s;
 }
 
-section p {
-    line-height: 1.8;
-    font-size: 1.1rem;
-    color: #555;
+.blurry-ball:nth-child(3) {
+    background: rgba(0, 255, 123, 0.3);
+    width: 200px;
+    height: 200px;
+    top: 60%;
+    left: 20%;
+    animation-duration: 12s;
 }
 
-/* Link Styling */
-a {
-    color: #1e90ff;
-    text-decoration: none;
-    font-weight: bold;
+/* Animation */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) translateX(0);
+    }
+    50% {
+        transform: translateY(-20px) translateX(30px);
+    }
 }
-
-a:hover {
-    text-decoration: underline;
-}
-
-/* Footer */
-footer {
-    font-size: 0.9rem;
-    color: #777;
-}
-
-/* Beautiful outline for contact section */
-.contact-outline {
-    border: 2px dashed #444;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    margin-top: 20px;
-    background-color: #f9f9f9;
-}
-
-
